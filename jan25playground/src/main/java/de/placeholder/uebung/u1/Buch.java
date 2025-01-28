@@ -28,4 +28,14 @@ public class Buch {
     public void nenneSeitenanzahl() {
         System.out.println("Die Seitenanzahl des Buches " + titel + " vom Autor " + autor + " beträgt " + seitenanzahl);
     }
+
+    @Override
+    public String toString() {
+        return "Buch{" +
+                "titel='" + titel + '\'' +
+                ", autor='" + autor + '\'' +
+                ", seitenanzahl=" + seitenanzahl +
+                ", preis=" + preis +
+                '}';
+    }
 }
