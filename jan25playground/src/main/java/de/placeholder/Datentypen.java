@@ -6,7 +6,7 @@ public class Datentypen {
 
     // String[] = String-Array = Sammlung von Strings
 
-    // Diese Methode wird automatisch von dem Interpreter gestartet
+    // Diese Methode wird automatisch von dem Interpreter gestartet.
     // Der Interpreter nutzt dazu die Methode aus der Klasse (static) und erzeugt KEIN Recher Objekt
     public static void main(String[] args) {
 
