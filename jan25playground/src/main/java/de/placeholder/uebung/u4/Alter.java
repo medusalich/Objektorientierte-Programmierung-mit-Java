@@ -13,12 +13,18 @@ public class Alter {
 
         if (alter >= 0 && alter <= 12) {
             System.out.println("Kind!");
-        } else if (alter >= 13 && alter <= 19) {
+        }
+        else if (alter <= 19) {
             System.out.println("Teenager!");
-        } else if (alter >= 20 && alter <= 64) {
+        }
+        else if (alter <= 64) {
             System.out.println("Erwachsener!");
-        } else {
+        }
+        else if (alter > 64){
             System.out.println("Senior!");
+        }
+        else {
+            System.out.println("Falsche Eingabe!");
         }
     }
 }
