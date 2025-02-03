@@ -21,6 +21,7 @@ public class RechnerTest {
         double ergebnis = 0;
 
         switch(waehlen) {
+            case "+":
             case "addieren":
                 ergebnis = Rechner.addieren(zahl1, zahl2);
                 System.out.println("Ergebnis der Addition: " + ergebnis);
