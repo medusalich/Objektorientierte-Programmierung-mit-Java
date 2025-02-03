@@ -29,8 +29,8 @@ public class StringTest {
         text = text.substring(2, 15); // Liefert einen Ausschnitt
         System.out.println(text);
         System.out.println(text.charAt(0)); // Liefert das Zeichen an Position 0
-        System.out.println(text.startsWith("S")); // Prüft ob der Text mit s startet
-        System.out.println(text.endsWith("DAS")); // Prüft ob der Text mit DAS endet
+        System.out.println(text.startsWith("S")); // Prüft, ob der Text mit s startet
+        System.out.println(text.endsWith("DAS")); // Prüft, ob der Text mit DAS endet
 
         // liefert indexOf einen positiven wert, dann bedeutet das, dass das gesuchte
         // Wort im String vorkommt
@@ -44,7 +44,7 @@ public class StringTest {
         text = "GO123";
         System.out.println(text);
         // matches = Prüft, ob der Text einem Muster (RegExp) entspricht
-        // Text in Kein und Großbuchstabenmit mit der Länge von 2 - 10 Zeichen?
+        // Text in Kein- und Großbuchstaben mit der Länge von 2 - 10 Zeichen?
         System.out.println(text.matches("[a-zA-Z0-9]{2,10}"));
 
         text = "Das ist ein Haus von Peter Parker";
