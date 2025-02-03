@@ -1,4 +1,4 @@
-package de.placeholder.uebung.uebung.u5;
+package de.placeholder.uebung.u5;
 
 public class Aufgabe5 {
 
