@@ -66,7 +66,7 @@ public class Todos {
 
         System.out.print("\nTodo: ");
         String eingabe = scanner.nextLine(); // Liest die ganze Zeile ein ikl. Leerzeichen
-        todos[next] = eingabe; // Wert von der Konsole wird im Array auf der Position 0 abgeleget
+        todos[next] = eingabe; // Wert von der Konsole wird im Array auf der Position 0 abgelegt.
 
         // TODO: Daten in eine Datei speichern
 
