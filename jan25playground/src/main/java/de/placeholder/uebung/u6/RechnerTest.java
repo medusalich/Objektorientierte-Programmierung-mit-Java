@@ -15,7 +15,7 @@ public class RechnerTest {
         double zahl2 = scanner.nextDouble();
         scanner.nextLine();
 
-        System.out.println("\nWählen Sie die Operation (addieren, subtrahieren, multiplizieren, dividieren): ");
+        System.out.println("\nWählen die Operation (+, addieren, -, subtrahieren, *, multiplizieren, /, dividieren): ");
         String waehlen = scanner.nextLine().toLowerCase();
 
         double ergebnis = 0;
@@ -42,6 +42,5 @@ public class RechnerTest {
                 System.out.println("Ergebnis der Addition: " + ergebnis);
                 break;
         }
-
     }
 }
