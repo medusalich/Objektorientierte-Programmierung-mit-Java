@@ -26,14 +26,17 @@ public class RechnerTest {
                 ergebnis = Rechner.addieren(zahl1, zahl2);
                 System.out.println("Ergebnis der Addition: " + ergebnis);
                 break;
+            case "-":
             case "subtrahieren":
                 ergebnis = Rechner.subtrahieren(zahl1, zahl2);
                 System.out.println("Ergebnis der Subtraktion: " + ergebnis);
                 break;
+            case "*":
             case "multiplizieren":
                 ergebnis = Rechner.multiplizieren(zahl1, zahl2);
                 System.out.println("Ergebnis der Addition: " + ergebnis);
                 break;
+            case "/":
             case "dividieren":
                 ergebnis = Rechner.dividieren(zahl1, zahl2);
                 System.out.println("Ergebnis der Addition: " + ergebnis);
