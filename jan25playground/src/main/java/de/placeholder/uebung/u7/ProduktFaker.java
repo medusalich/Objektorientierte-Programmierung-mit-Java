@@ -36,10 +36,7 @@ public class ProduktFaker {
             Produkte p1 = new Produkte(name, beschreibung, preis);
             arr[i] = p1;
 
-
         }
         return arr;
     }
-
-
 }
