@@ -20,10 +20,5 @@ public class BenutzerkontoTest {
 
         b1.kontoDeaktivieren();
         System.out.println(b1);
-
-
-
-
-
     }
 }

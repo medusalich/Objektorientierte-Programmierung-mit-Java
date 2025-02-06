@@ -22,9 +22,5 @@ public class BenutzerkontoTest2 {
         //False
         b1.validiereBenutzernameUndEmail("Hani", "Hani@hanshans.de");
         System.out.println();
-
-
     }
-
-
 }
