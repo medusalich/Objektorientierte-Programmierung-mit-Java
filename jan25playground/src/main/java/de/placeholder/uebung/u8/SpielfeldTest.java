@@ -30,5 +30,4 @@ public class SpielfeldTest {
             feld.print();
         }
     }
-
 }

@@ -1,9 +1,6 @@
 package de.placeholder.uebung.u8;
 
-import java.util.Scanner;
-
 public class Spielfeld {
-
 
     private String[][] arr2d = new String[20][20];
 
@@ -46,7 +43,7 @@ public class Spielfeld {
         for (String[] reihe : arr2d) {
             for (String feld : reihe) {
                 if (feld == null) {
-                    System.out.print(" X ");
+                    System.out.print(" x ");
                 } else {
                     System.out.print(" " + feld + " ");
                 }
@@ -54,8 +51,4 @@ public class Spielfeld {
             System.out.println();
         }
     }
-
-
-
-
 }
