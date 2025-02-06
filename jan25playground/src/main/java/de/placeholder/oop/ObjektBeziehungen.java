@@ -9,7 +9,12 @@ public class ObjektBeziehungen {
         //1 zu 1, 1 zu n, n zu m.
 
         Motor m1 = new Motor("Benzin", "123ABC1522X", 8, 210, 3.0);
+        System.out.println(m1);
 
+        Fahrzeug f1 = new Fahrzeug("HH-AB123", "VW", "Polo", 2015, 40_000);
+        f1.setMotor(m1); //Der Motor wird in das Fahrzeug eingefügt (Objektbeziehung).
+
+        System.out.println(f1);
 
     }
 }
