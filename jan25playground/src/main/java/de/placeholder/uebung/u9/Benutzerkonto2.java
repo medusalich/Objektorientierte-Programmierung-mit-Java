@@ -16,6 +16,14 @@ public class Benutzerkonto2 {
                 "\nKonto aktiv: " + (aktiv ? "Ja" : "Nein");
     }
 
+    public void setBenutzername(String benutzername) {
+        this.benutzername = benutzername;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void kontoAktivieren() {
         if(aktiv == false) {
             aktiv = true;
@@ -31,11 +39,7 @@ public class Benutzerkonto2 {
     }
 
     public String zeigeStatus () {
-        benutzername = "Hans";
-        email = "Hans@example.com";
-        aktiv = false;
         return toString();
-
     }
 
     public void aendereEmail(String neueEmail) {

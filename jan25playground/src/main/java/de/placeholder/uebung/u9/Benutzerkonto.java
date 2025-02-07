@@ -9,6 +9,14 @@ public class Benutzerkonto {
     public Benutzerkonto() {
     }
 
+    public void setBenutzername(String benutzername) {
+        this.benutzername = benutzername;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Benutzername:" + benutzername +
@@ -32,9 +40,6 @@ public class Benutzerkonto {
     }
 
     public String zeigeStatus () {
-        benutzername = "Hans";
-        email = "Hans@example.com";
-        aktiv = false;
         return toString();
     }
 }

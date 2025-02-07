@@ -6,6 +6,8 @@ public class BenutzerkontoTest {
 
         Benutzerkonto b1 = new Benutzerkonto();
 
+        b1.setEmail("hans@hanshans.de");
+        b1.setBenutzername("hans");
         System.out.println();
 
         b1.zeigeStatus();

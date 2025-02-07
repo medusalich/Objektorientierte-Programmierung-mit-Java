@@ -6,6 +6,9 @@ public class BenutzerkontoTest2 {
 
         Benutzerkonto2 b1 = new Benutzerkonto2();
 
+        b1.setEmail("hans@hanshans.de");
+        b1.setBenutzername("hans");
+
         b1.zeigeStatus();
         b1.kontoAktivieren();
         System.out.println(b1);
@@ -16,7 +19,7 @@ public class BenutzerkontoTest2 {
         System.out.println();
 
         //True
-        b1.validiereBenutzernameUndEmail("Hans", "Hans@hanshans.de");
+        b1.validiereBenutzernameUndEmail("hans", "Hans@hanshans.de");
         System.out.println();
 
         //False
