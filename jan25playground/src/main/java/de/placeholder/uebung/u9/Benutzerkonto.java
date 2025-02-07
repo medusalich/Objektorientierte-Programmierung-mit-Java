@@ -32,7 +32,6 @@ public class Benutzerkonto {
     }
 
     public String zeigeStatus () {
-
         benutzername = "Hans";
         email = "Hans@example.com";
         aktiv = false;
