@@ -11,7 +11,7 @@ public class BarTest {
         System.out.println(str);
 
         double flaeche = GeoUtils.flaeche(100, 200);
-        System.out.printf("Die Fläche ist %.2f qm", flaeche); // Farmatierte Ausgabe
+        System.out.printf("Die Fläche ist %.2f qm", flaeche); // Formatierte Ausgabe
         System.out.printf("Die Fläche ist %.2f qm", GeoUtils.flaeche(100, 200)); // Auch ok
 
         String erg = String.format("Die Fläche ist %.2f qm", flaeche); // Formatierte Rückgabe

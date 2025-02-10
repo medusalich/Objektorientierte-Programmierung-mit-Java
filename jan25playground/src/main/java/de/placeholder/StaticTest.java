@@ -5,22 +5,22 @@ import java.time.Period;
 
 public class StaticTest {
 
-    //1. Eigenschaften
-    //2. Konstruktoren
-    //3. Restliche Methoden
+    // 1. Eigenschaften
+    // 2. Konstruktoren
+    // 3. Restliche Methoden
 
     static int zahl = 100;
 
     static void changeText() {
-        //Statische Methoden dürfen nur statische Eigenschaften und statische Methoden verwenden
+        // Statische Methoden dürfen nur statische Eigenschaften und statische Methoden verwenden
         System.out.println(zahl++); //++ verändert die Zahl um 1
 
     }
 
-    //Statische Methoden sind gut dazu geeignet Werte zu verändern,
-    //die als Parameter übergeben wurden
-    //String = Datentyp
-    //text = Variablenname
+    // Statische Methoden sind gut dazu geeignet Werte zu verändern,
+    // die als Parameter übergeben wurden
+    // String = Datentyp
+    // text = Variablenname
     static void changeText(String text) {
         System.out.println(text.toUpperCase());
     }
@@ -33,10 +33,10 @@ public class StaticTest {
 
     public static void main(String[] args) {
 
-        //Für Klassenmethoden (statische Methoden) wird kein Objekt benötigt.
+        // Für Klassenmethoden (statische Methoden) wird kein Objekt benötigt.
         changeText();
 
-        //Aufruf einer Klassenmethode aus einer andern Klasse
+        // Aufruf einer Klassenmethode aus einer andern Klasse
         StaticTest.changeText(); // Es wird der Klassenname davor geschrieben.
 
         changeText("Das ist das Haus vom Nikigraus!");
@@ -63,8 +63,8 @@ public class StaticTest {
         System.out.println(powQuadrat(20.0));
     }
 
-    //Statische Methoden verarbeiten die Parameter
+    // Statische Methoden verarbeiten die Parameter
     public static double powQuadrat(double zahl){
-        return zahl * zahl; //return = wird aus der Methode an den Aufrufer zurückgegeben.
+        return zahl * zahl; // return = wird aus der Methode an den Aufrufer zurückgegeben.
     }
 }

@@ -10,7 +10,7 @@ public class ScopeTest {
     public static void main(String[] args) {
 
         int i = 10; // Bis zu Ende des blocks gültig in dem sie deklariert wurde
-        //machWas();
+        // machWas();
 
         {
             int x = 200; // Bis zu Ende des blocks gültig in dem sie deklariert wurde
@@ -31,7 +31,7 @@ public class ScopeTest {
 
         boolean exit = false;
 
-        String meldung; // Bis zu ende der Main-Methode sichtbar
+        String meldung; // Bis zu Ende der Main-Methode sichtbar
 
         if(exit) {
             meldung = "Wird verlassen";

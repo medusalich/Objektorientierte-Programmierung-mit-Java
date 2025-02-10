@@ -3,13 +3,13 @@ package de.placeholder;
 public class GCTest {
     public static void main(String[] args) throws InterruptedException {
 
-        //zeug ist eine Referenz auf das Objekt auf dem Heap.
-        //zeug als Referenz liegt selbst auf dem Stack.
+        // zeug ist eine Referenz auf das Objekt auf dem Heap.
+        // zeug als Referenz liegt selbst auf dem Stack.
         Thing zeug = new Thing("Dies und das!");
         zeug = null;
-        System.gc(); //Aufforderung an die Müll-Abfuhr tätig zu werden.
+        System.gc(); // Aufforderung an die Müll-Abfuhr tätig zu werden.
 
-        //Der aktuelle Sub-Prozess (Thread) wartet 1 Sekunde.
+        // Der aktuelle Sub-Prozess (Thread) wartet 1 Sekunde.
         Thread.sleep(1000);
 
         {
@@ -22,13 +22,13 @@ public class GCTest {
     private static void coutTo10() {
         for (int i = 1; i <= 10; i++) {
 
-            if(i == 5) return; //Verlässt vorzeitig die Methode.
+            if(i == 5) return; // Verlässt vorzeitig die Methode.
 
             System.out.println(i);
         }
     }
 
-    //Rückgabetyp steht auf int d.h. Methode MUSS einen int-Wert per return zurückgeben.
+    // Rückgabetyp steht auf int d.h. Methode MUSS einen int-Wert per return zurückgeben.
     private static int getNr() {
         return 10;
     }
@@ -53,7 +53,7 @@ class Thing {
     //Destruktor
     @Override
     protected void finalize() throws Throwable {
-        //Wird ausgeführt, wenn die Müll-Abfuhr das Objekt wirklich vom Speicher entfernt.
+        // Wird ausgeführt, wenn die Müll-Abfuhr das Objekt wirklich vom Speicher entfernt.
         System.out.println("UGRRRR!!!!!");
     }
 }

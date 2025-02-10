@@ -9,28 +9,28 @@ public class MethodenTest {
         hallo();
     }
 
-    //Instanzmethode
-    //In Methoden werden wiederverwendbare Aktivitäten verpackt
-    //Methoden sind Funktionen, die zu einer Klasse gehören.
+    // Instanzmethode.
+    // In Methoden werden wiederverwendbare Aktivitäten verpackt
+    // Methoden sind Funktionen, die zu einer Klasse gehören.
     public void hi() {
         System.out.println("Hey Moin!");
     }
 
-    //Klassenmethode
+    // Klassenmethode
     public static void hallo() {
         System.out.println("Moin Moin!");
     }
 }
 
 /*
-//Freie Funktionen gibt es in Java nicht.
-//Alle Funktionen werden in Java in Klassen verpackt und heißen dann Methoden.
+// Freie Funktionen gibt es in Java nicht.
+// Alle Funktionen werden in Java in Klassen verpackt und heißen dann Methoden.
 
-function machWas() { //Deklaration einer Funktion
+function machWas() { // Deklaration einer Funktion
     echo "Hallo";
 }
 
-machWas(); //Verwendung einer Funktion
+machWas(); // Verwendung einer Funktion
 
 function add(a, b) {
     return a + b;
@@ -38,6 +38,6 @@ function add(a, b) {
 
 sum = add(10, 25)
 sum = add(33, -100)
-//etc.
+// etc.
 
  */

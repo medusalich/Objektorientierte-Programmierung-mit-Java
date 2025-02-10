@@ -9,7 +9,7 @@ public class LogicVsBitwise {
         int zahl1 = 35;
         int zahl2 = 17;
 
-        //System.out.println(zahl1 && zahl2); // Braucht auf beiden Seiten boolean
+        // System.out.println(zahl1 && zahl2); // Braucht auf beiden Seiten boolean
         System.out.println(zahl1 & zahl2);
         // 35: 00100011
         // 17: 00010001 &

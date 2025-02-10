@@ -8,8 +8,8 @@ public class Motor {
     private final int staerkeInPs;
     private final double hubraum;
 
-    //finale Instanzvariablen müssen gleich einen Wert zugewiesen bekommen
-    //oder spätestens im Konstruktor gesetzt werden.
+    // finale Instanzvariablen müssen gleich einen Wert zugewiesen bekommen
+    // oder spätestens im Konstruktor gesetzt werden.
 
     public Motor(String typ, String modellNr, int anzahlZylinder, int staerkeInPs, double hubraum) {
         this.typ = typ;

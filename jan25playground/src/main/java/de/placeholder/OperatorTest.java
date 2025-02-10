@@ -4,24 +4,24 @@ public class OperatorTest {
 
     public static void main(String[] args) {
 
-        //Operatoren
+        // Operatoren
 
-        //Mathematische: + - * / %
+        // Mathematische: + - * / %
         System.out.println(1 * 15);
 
-        //Zuweisung: = += *= etc.
+        // Zuweisung: = += *= etc.
         int x = 100;
         x += 17;
 
-        //Relational: == != < > <= >=
-        //Erg. ist immer boolean
+        // Relational: == != < > <= >=
+        // Erg. ist immer boolean
         System.out.println(10 == 15); //false
         System.out.println(10 != 15); //true
 
-        //Logische:
+        // Logische:
         x= 10;
-        System.out.println(x > 0 && x < 200); //Ist x größer 0 und ist x kleiner als 200
-        System.out.println(x > 0 || x > 200); //Ist x größer 0 oder ist x größer als 200
+        System.out.println(x > 0 && x < 200); // Ist x größer 0 und ist x kleiner als 200
+        System.out.println(x > 0 || x > 200); // Ist x größer 0 oder ist x größer als 200
 
         /*
         XOR = ^ Exclusiv-ODER
@@ -35,7 +35,7 @@ public class OperatorTest {
         | 0 | 0 |    0    |    0   |    0    |
         */
 
-        //Ternärer Operator
+        // Ternärer Operator
         //           Bedingung         Wahr                 Sonst
         String text = (x > 0)? "Ist größer als 10" : "Ist kleiner als 10";
         System.out.println(text);

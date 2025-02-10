@@ -2,36 +2,36 @@ package de.placeholder.access.sub;
 
 public class KaffeeProdukt {
 
-    //Nur für diese Klasse sichtbar
+    // Nur für diese Klasse sichtbar
     private String name;
 
-    //Für diese Klasse und andere Klassen im gleichen Package sichtbar
+    // Für diese Klasse und andere Klassen im gleichen Package sichtbar
     int kaffee;
 
-    //Für diese Klasse und andere Klassen im gleichen Package sichtbar, sowie erbenden Klassen außerhalb sichtbar
+    // Für diese Klasse und andere Klassen im gleichen Package sichtbar, sowie erbenden Klassen außerhalb sichtbar
     protected int milch;
 
-    //Für alle sichtbar
+    // Für alle sichtbar
     public int zucker;
 
-    //Der Konstruktor gehört zu der Klasse, daher darf er die Eigenschaft sehen und verändern.
+    // Der Konstruktor gehört zu der Klasse, daher darf er die Eigenschaft sehen und verändern.
     public KaffeeProdukt(String name) {
         this.name = name;
     }
 
-    //Zum Lesen von privaten Eigenschaften.
+    // Zum Lesen von privaten Eigenschaften.
     public String getName() {
         return name;
     }
 
-    //Zum Verändern von privaten Eigenschaften.
+    // Zum Verändern von privaten Eigenschaften.
     public void setName(String name) {
         this.name = name;
     }
 
     public String getNameInSchoen() {
-        //return verlässt die Methode. Es sollte die letzte Anweisung in der Methode sein.
+        // return verlässt die Methode. Es sollte die letzte Anweisung in der Methode sein.
         return "---" + name.toUpperCase() + "---";
-        //name = "..."; //Aktionen nach dem return sind nicht mehr möglich.
+        // name = "..."; //Aktionen nach dem return sind nicht mehr möglich.
     }
 }

@@ -4,7 +4,7 @@ public class Produkt {
 
     private int nr;
 
-    //private = Die Klasse kann diese Eigenschaft benutzen, für andere Klassen ist diese NICHT sichtbar.
+    // private = Die Klasse kann diese Eigenschaft benutzen, für andere Klassen ist diese NICHT sichtbar.
     private String name;
 
     private String beschreibung;
@@ -13,12 +13,12 @@ public class Produkt {
 
     private double preis;
 
-    //Wenn kein eigener Konstruktor definiert ist, stellt Java automatisch einen leeren Konstruktor bereit.
-    //default Konstruktor
+    // Wenn kein eigener Konstruktor definiert ist, stellt Java automatisch einen leeren Konstruktor bereit.
+    // default Konstruktor
     public Produkt() {
     }
 
-    //Wenn ein eigener Konstruktor definiert wurde, stellt Java keinen default Konstruktor mehr bereit.
+    // Wenn ein eigener Konstruktor definiert wurde, stellt Java keinen default Konstruktor mehr bereit.
     public Produkt(int nr, String name, String beschreibung, int anzahl, double preis) {
         this.nr = nr;
         this.name = name;
@@ -32,7 +32,7 @@ public class Produkt {
     }
 
     public void setName(String name) {
-        //trim entfernt nicht benötigte Leerzeichen an beiden Enden.
+        // trim entfernt nicht benötigte Leerzeichen an beiden Enden.
         if(name != null && name.trim().length() > 0) {
             this.name = name.trim();
         }

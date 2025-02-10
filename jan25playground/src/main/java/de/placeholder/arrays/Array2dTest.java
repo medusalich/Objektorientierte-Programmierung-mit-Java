@@ -8,16 +8,16 @@ public class Array2dTest {
         arr1d[3] = 'X';
         arr1d[0] = 'A';
 
-        //Array-Index wird erst zur Laufzeit geprüft
-        //arr1d[12] = 'Z'; //ArrayIndexOutBoundsException
-        //arr1d[-12] = 'Z'; //ArrayIndexOutBoundsException
+        // Array-Index wird erst zur Laufzeit geprüft
+        // arr1d[12] = 'Z'; //ArrayIndexOutBoundsException
+        // arr1d[-12] = 'Z'; //ArrayIndexOutBoundsException
 
         char[][] arr2d = new char[10][10];
         arr2d[2][3] = 'X';
 
-        //Erste Schleife läuft das Array Reihe für Reihe durch
+        // Erste Schleife läuft das Array Reihe für Reihe durch
         for (char[] reihe : arr2d) {
-            for(char sitz : reihe) { //Zweite Schleife läuft die Reihe Sitz für Sitz durch
+            for(char sitz : reihe) { // Zweite Schleife läuft die Reihe Sitz für Sitz durch
                 System.out.print("#" + sitz + " ");
             }
             System.out.println();

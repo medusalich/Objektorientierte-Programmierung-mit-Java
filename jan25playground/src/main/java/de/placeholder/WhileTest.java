@@ -9,7 +9,7 @@ public class WhileTest {
     public static void main(String[] args) {
 
         kopfgesteuert();
-        //fussgesteuert();
+        // fussgesteuert();
 
         scanner.close();
         System.out.println("Ende des Programms.");

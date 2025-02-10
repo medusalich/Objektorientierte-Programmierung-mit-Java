@@ -8,24 +8,24 @@ public class Robot {
 
     public Robot(String name) {
         this.name = name;
-        //x und y starten be 0
+        // x und y starten be 0
     }
 
-    //Methodenparameter sind lokale Variablen
+    // Methodenparameter sind lokale Variablen
     public Robot(String name, int x, int y) {
-        //name = lokale Variable
-        //this.name = Instanz Eigenschaft
+        // name = lokale Variable
+        // this.name = Instanz Eigenschaft
         this.name = name;
         this.x = x;
         this.y = y;
-        //this muss verwendet werden, wenn Eigenschaften und lokale Variablen gleich heißen.
+        // this muss verwendet werden, wenn Eigenschaften und lokale Variablen gleich heißen.
     }
 
-    //public = Methode ist von überall verwendbar
-    //void = Rückgabetyp. void heißt, es gibt keine Rückgabe
-    //goUp = Name der Methode
-    //() = Parameterklammer
-    //{} = Alles innerhalb der Klammer gehört zu dieser Methode
+    // public = Methode ist von überall verwendbar
+    // void = Rückgabetyp. void heißt, es gibt keine Rückgabe
+    // goUp = Name der Methode
+    // () = Parameterklammer
+    // {} = Alles innerhalb der Klammer gehört zu dieser Methode
     public void goUp() {
         x++;
     }

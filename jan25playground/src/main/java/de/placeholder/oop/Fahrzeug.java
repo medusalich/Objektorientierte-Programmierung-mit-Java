@@ -12,7 +12,7 @@ public class Fahrzeug {
 
     private int kmStand;
 
-    //Hier wird ein Motor Objekt abgelegt.
+    // Hier wird ein Motor Objekt abgelegt.
     private Motor motor;
 
     public Fahrzeug(String kennzeichen, String marke, String modell, int baujahr, int kmStand) {

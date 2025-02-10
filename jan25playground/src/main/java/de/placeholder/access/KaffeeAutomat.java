@@ -1,10 +1,10 @@
 package de.placeholder.access;
 
-//Klassen aus anderen Packages MÜSSEN IMMER vor der Verwendung importiert werden.
+// Klassen aus anderen Packages MÜSSEN IMMER vor der Verwendung importiert werden.
 import de.placeholder.access.sub.KaffeeProdukt;
 
-//Importiert alle Klassen aus sub.
-//Importiert KEINE Unter-Packages von sub.
+// Importiert alle Klassen aus sub.
+// Importiert KEINE Unter-Packages von sub.
 import de.placeholder.access.sub.*;
 
 // Importiert alle Klassen aus java.util
@@ -12,35 +12,35 @@ import java.util.*;
 // Unter-Packages müssen extra importiert werden
 import java.util.function.*;
 
-//Alle Klassen aus dem Package java.lang brauchen nicht importiert zu werden.
+// Alle Klassen aus dem Package java.lang brauchen nicht importiert zu werden.
 
 public class KaffeeAutomat {
 
     public static void main(String[] args) {
 
-        //Konstruktor erzeugt IMMER ein neues Objekt.
-        //Nachträgliche Änderung der Daten ist über den Konstruktor nicht möglich!
+        // Konstruktor erzeugt IMMER ein neues Objekt.
+        // Nachträgliche Änderung der Daten ist über den Konstruktor nicht möglich!
         KaffeeProdukt americano = new KaffeeProdukt("Espresso");
 
-        //String kommt aus java.lang.
+        // String kommt aus java.lang.
         String msg = "Was möchtest du trinken?";
 
-        //Muss importiert werden, da sie in java.util liegt.
-        //ArrayList list = new ArrayList();
+        // Muss importiert werden, da sie in java.util liegt.
+        // ArrayList list = new ArrayList();
 
         americano.zucker = 1; //public d.h. für alle sichtbar.
         System.out.println(americano.zucker);
-        //Durch direkten Zugriff kann eine Eigenschaft einen ungültigen Wert bekommen.
+        // Durch direkten Zugriff kann eine Eigenschaft einen ungültigen Wert bekommen.
         americano.zucker = -1;
         americano.zucker = 100_000;
         System.out.println(americano.zucker);
 
-        //americano.name = "espresso"; //private d.h. hier nicht sichtbar!
-        //System.out.println(americano.name);
-        //Der Getter ist hier sichtbar, da public.
-        //Er liefert den Zustand der Eigenschaft name.
+        // americano.name = "espresso"; //private d.h. hier nicht sichtbar!
+        // System.out.println(americano.name);
+        // Der Getter ist hier sichtbar, da public.
+        // Er liefert den Zustand der Eigenschaft name.
         System.out.println(americano.getName());
-        americano.setName("Americano"); //Führt eine nachträgliche Änderung des Objekts durch.
+        americano.setName("Americano"); // Führt eine nachträgliche Änderung des Objekts durch.
 
         System.out.println(americano.getName());
         System.out.println(americano.getNameInSchoen());
