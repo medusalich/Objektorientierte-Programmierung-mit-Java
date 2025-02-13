@@ -32,6 +32,8 @@ public class VererbungTest2 {
         t1 = new Katze();
 //        ((Hund)t1).spieleMitEinemBall(); // ClassCastException, Objekttyp ist Katze.
 
+        System.out.println();
+
         List<Tier> tiere = new ArrayList<>();
         tiere.add(new Hund());
         tiere.add(new Katze());
