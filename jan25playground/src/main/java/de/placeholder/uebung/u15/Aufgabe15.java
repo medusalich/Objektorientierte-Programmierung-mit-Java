@@ -16,7 +16,7 @@ public class Aufgabe15 {
 
     /*
     Aufgabe 2:
-    Baue eine Klasse Fahrzeug mit der Möglichkeit vorwärts und rückwärts zu fahren.
+    Baue eine Klasse Fahrzeug mit der Möglichkeit vorwärts und rückwärtszufahren.
     Erweitere diese Klasse durch Pkw, Motorrad, Boot und Flugzeug.
     Teste jede der Klassen.
     Wichtig: Motorrad und Flugzeug können nicht rückwärts fahren!
