@@ -1,4 +1,4 @@
-package de.placeholder.uebung.u14;
+package de.placeholder.uebung.u14.A1;
 
 import java.util.Objects;
 

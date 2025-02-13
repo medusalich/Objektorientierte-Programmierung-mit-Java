@@ -125,7 +125,7 @@ class Pkw extends Fahrzeug {
 
     // Überschreiben = Ersetzen einer geerbten Methode.
     // Nur möglich, wenn die Signatur gleich bleibt.
-    @Override // Prüft, ob eine Methode mit gleicher Signatur in der Eleternklasse vorhanden ist.
+    @Override // Prüft, ob eine Methode mit gleicher Signatur in der Elternklasse vorhanden ist.
     public void printInfo() {
         System.out.println("Fahrzeug: Pkw Info, ");
         super.printInfo(); // Benutzt die überschriebene Methode aus der Elternklasse.
