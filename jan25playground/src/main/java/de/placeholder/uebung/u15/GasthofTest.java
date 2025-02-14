@@ -11,13 +11,13 @@ public class GasthofTest {
 
         gasthof.bewirten(r1);
         gasthof.ausruhen(r1);
-        gasthof.versogen(r1);
+        gasthof.versorgen(r1);
 
         System.out.println();
 
         gasthof.bewirten(w1);
         gasthof.ausruhen(w1);
-        gasthof.versogen(w1);
+        gasthof.versorgen(w1);
     }
 }
 
@@ -30,7 +30,7 @@ class Gasthof {
         System.out.println(gast.getBezeichnung() + " wird bewirtet.");
     }
 
-    public void versogen(Tierhalter tierhalter) {
+    public void versorgen(Tierhalter tierhalter) {
         System.out.println(tierhalter.getTier() + " wird mit Futter und Wasser versorgt");
     }
 }
