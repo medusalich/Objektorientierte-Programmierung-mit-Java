@@ -31,7 +31,7 @@ class Gasthof {
     }
 
     public void versogen(Tierhalter tierhalter) {
-        System.out.println(tierhalter.getTier() + " wird mit Essen und Trinken versorgt");
+        System.out.println(tierhalter.getTier() + " wird mit Futter und Wasser versorgt");
     }
 }
 
