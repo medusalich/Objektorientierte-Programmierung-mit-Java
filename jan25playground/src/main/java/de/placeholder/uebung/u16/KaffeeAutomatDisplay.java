@@ -21,17 +21,20 @@ public class KaffeeAutomatDisplay {
         Scanner scanner = new Scanner(System.in);
         KaffeeAutomat automat = new KaffeeAutomat();
 
-        AutomatenProdukt produkt = null;
+        Produkt produkt = null;
 
         while (true) {
-            System.out.println("\n1. Espresso" +
-                    "\n2. Latte Macchiato" +
-                    "\n3. Cappuccino" +
-                    "\n4. Schwarzer Kaffee" +
-                    "\n5. Heiße Schokolade" +
-                    "\n6. Tomatensuppe" +
-                    "\n7. Heißes Wasser" +
-                    "\nWählen ein Getränk aus : ");
+
+            List<Produkt> produkte = automat.getProdukte();
+
+            for (int i = 0; i < produkte.size(); i++) {
+                int position = i + 1;
+                String name = produkte.get(i).getName();
+                double preis = produkte.get(i).getPreis();
+                System.out.printf("%d %-20s %.2f\n", position, name, preis);
+
+            }
+            System.out.println("\nWählen ein Getränk aus : ");
             int auswahl = scanner.nextInt();
 
             switch (auswahl) {
@@ -55,18 +58,12 @@ public class KaffeeAutomatDisplay {
     }
 }
 
-
-
-interface Zahlbar {
-    double getPreis();
-}
-
-class AutomatenProdukt implements Zahlbar {
+class Produkt {
 
     private final String name;
     private double preis;
 
-    protected AutomatenProdukt(String name, double preis) {
+    protected Produkt(String name, double preis) {
         this.name = name;
         this.preis = preis;
     }
@@ -75,7 +72,6 @@ class AutomatenProdukt implements Zahlbar {
         return name;
     }
 
-    @Override
     public double getPreis() {
         return preis;
     }
@@ -85,54 +81,67 @@ class AutomatenProdukt implements Zahlbar {
     }
 }
 
-class Espresso extends AutomatenProdukt {
+class Espresso extends Produkt {
     public Espresso() {
         super("Espresso", 1.50);
     }
 }
 
-class LatteMacchiato extends AutomatenProdukt {
+class LatteMacchiato extends Produkt {
     public LatteMacchiato() {
         super("Latte Macchiato", 2.50);
     }
 }
 
-class Cappuccino extends AutomatenProdukt {
+class Cappuccino extends Produkt {
     public Cappuccino() {
         super("Cappuccino", 2.00);
     }
 }
 
-class SchwarzerKaffee extends AutomatenProdukt {
+class SchwarzerKaffee extends Produkt {
     public SchwarzerKaffee() {
         super("Schwarzer Kaffee", 0.50);
     }
 }
 
-class HeisseSchokolade extends AutomatenProdukt {
+class HeisseSchokolade extends Produkt {
     public HeisseSchokolade() {
         super("Heiße Schokolade", 1.00);
     }
 }
 
-class Tomatensuppe extends AutomatenProdukt {
+class Tomatensuppe extends Produkt {
     public Tomatensuppe() {
         super("Tomatensuppe", 0.80);
     }
 }
 
-class HeissesWasser extends AutomatenProdukt {
+class HeissesWasser extends Produkt {
     public HeissesWasser() {
         super("Heißes Wasser", 0.00);
-
     }
 }
 
 class KaffeeAutomat {
-    StringBuilder sb = new StringBuilder();
-    Scanner scanner = new Scanner(System.in);
+    private final StringBuilder sb = new StringBuilder();
+    private final Scanner scanner = new Scanner(System.in);
+    private final List<Produkt> produkte = new ArrayList<>();
 
-    public void bezahlen(AutomatenProdukt produkt) {
+    public KaffeeAutomat() {
+        produkte.add(new Espresso());
+        produkte.add(new LatteMacchiato());
+        produkte.add(new Cappuccino());
+        produkte.add(new SchwarzerKaffee());
+        produkte.add(new HeisseSchokolade());
+        produkte.add(new HeissesWasser());
+    }
+
+    public List<Produkt> getProdukte() {
+        return produkte;
+    }
+
+    public void bezahlen(Produkt produkt) {
 
         double eingeworfenerBetrag = 0;
         while (true) {
@@ -143,11 +152,15 @@ class KaffeeAutomat {
             if (eingeworfenerBetrag < produkt.getPreis()) {
                 sb.setLength(0);
                 sb.append("\n")
-                        .append("Nicht genügend Geld. Der Preis für ")
+                        .append("Nicht genügend Geld. ")
+                        .append("\n")
+                        .append("Der Preis für ")
                         .append(produkt.getName())
                         .append(" beträgt ")
                         .append(produkt.getPreis())
-                        .append(" Euro. Bitte genügen Geld einwerfen.");
+                        .append(" Euro. ")
+                        .append("\n")
+                        .append("Bitte genügen Geld einwerfen.");
                 System.out.println(sb.toString());
                 continue;
             }
@@ -167,7 +180,7 @@ class KaffeeAutomat {
         }
     }
 
-    public void produziert(AutomatenProdukt produkt) {
+    public void produziert(Produkt produkt) {
         sb.setLength(0);
         sb.append("Einen Moment Bitte :)").append("\n");
         sb.append(produkt.getName()).append(" ist fertig, VORSICHT HEIß!");
