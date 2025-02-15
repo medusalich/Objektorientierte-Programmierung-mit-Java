@@ -4,13 +4,13 @@ public class Aufgabe16 {
 
     /*
     Aufgabe 1
-    Schreibe ein Programm für eine Kaffeemaschine.
+    Schreibe ein Programm für eine KaffeeAutomat.
 
     Über die Konsole kann ein Produkt ausgewählt werden.
     Daraufhin produziert das Programm ein Objekt einer Kindklasse der Klasse Kaffeeprodukt.
 
     Für den Kaffee soll ausreichend Geld eingeworfen werden.
-    Das passiert über eine Methode der Kaffeemaschine, wo man als Parameter einen double
+    Das passiert über eine Methode der KaffeeAutomat, wo man als Parameter einen double
     übergibt. Sollte dies nicht der Falls sein, bekommt man eine entsprechende Meldung.
 
     Erweiterung:
