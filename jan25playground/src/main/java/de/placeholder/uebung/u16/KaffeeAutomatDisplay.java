@@ -27,6 +27,8 @@ public class KaffeeAutomatDisplay {
         Scanner scanner = new Scanner(System.in);
         KaffeeAutomat automat = new KaffeeAutomat();
 
+        automat.leseAusDatei();
+
         AutomatenProdukt produkt = null;
 
         while (true) {
@@ -59,6 +61,8 @@ public class KaffeeAutomatDisplay {
         automat.bezahlen(produkt);
 
         automat.produziert(produkt);
+
+        automat.schreibeInDatei();
     }
 }
 
@@ -89,6 +93,10 @@ class AutomatenProdukt {
     public void setAnzahl(int anzahl) {
         this.anzahl = anzahl;
     }
+
+    public void reduziereAnzahl() {
+         anzahl -= 1;
+    }
 }
 
 class Produkt {
@@ -111,7 +119,6 @@ class Produkt {
     public int getMl() {
         return ml;
     }
-
 }
 
 class Espresso extends Produkt {
@@ -161,6 +168,7 @@ class KaffeeAutomat {
     private final StringBuilder sb = new StringBuilder();
     private final Scanner scanner = new Scanner(System.in);
     private final List<AutomatenProdukt> produkte = new ArrayList<>();
+    private final String dateiName = "protokoll.txt";
 
     public KaffeeAutomat() {
         produkte.add(new AutomatenProdukt(new Espresso(), 1.50, 0));
@@ -172,6 +180,29 @@ class KaffeeAutomat {
         produkte.add(new AutomatenProdukt(new HeissesWasser(), 0.00, 30));
     }
 
+    public void schreibeInDatei() {
+        try (FileWriter fw = new FileWriter(dateiName)) {
+            for (AutomatenProdukt produkt : produkte) {
+                fw.write(produkt.getAnzahl() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Fehler beim Schreiben in die Datei: " + e.getMessage());
+        }
+    }
+
+    public void leseAusDatei() {
+        try (BufferedReader br = new BufferedReader(new FileReader(dateiName))) {
+            String zeile;
+            int i = 0;
+            while ((zeile = br.readLine()) != null) {
+                produkte.get(i).setAnzahl(Integer.valueOf(zeile));
+                i++;
+            }
+        } catch (IOException e) {
+            System.out.println("Fehler beim Lesen der Datei: " + e.getMessage());
+        }
+    }
+
     public List<AutomatenProdukt> getProdukte() {
         return produkte;
     }
@@ -180,7 +211,7 @@ class KaffeeAutomat {
 
         double eingeworfenerBetrag = 0;
         while (true) {
-            System.out.println("Bitte den Betrag einwerfen: ");
+            System.out.println("Münzen einwerfen: ");
             double betrag = scanner.nextDouble();
             eingeworfenerBetrag += betrag;
 
@@ -193,9 +224,7 @@ class KaffeeAutomat {
                         .append(produkt.getProdukt().getName())
                         .append(" beträgt ")
                         .append(String.format("%.2f", produkt.getPreis()))
-                        .append(" Euro. ")
-                        .append("\n")
-                        .append("Bitte genügend Geld einwerfen.");
+                        .append(" Euro. ");
                 System.out.println(sb);
                 continue;
             }
@@ -224,6 +253,7 @@ class KaffeeAutomat {
         sb.setLength(0);
         sb.append("Einen Moment Bitte :)").append("\n");
         sb.append(produkt.getProdukt().getName()).append(" ist fertig, VORSICHT HEIß!");
+        produkt.reduziereAnzahl();
         System.out.println(sb);
     }
 
@@ -232,64 +262,50 @@ class KaffeeAutomat {
     }
 }
 
-class MitarbeiterProtokoll {
-
-    private final StringBuilder sb = new StringBuilder();
-    private final List<String> protokoll = new ArrayList<>();
-    private final String dateiName = "protokoll.txt";
-
-    /**
-     * Fügt ein Produkt zum Protokoll hinzu und schreibt es in die Datei.
-     *
-     * @param produkt Der Name des Produkts, das hinzugefügt wird.
-     */
-    public void hinzufuegen(String produkt) {
-        protokoll.add(produkt);
-        schreibeInDatei();
-    }
-
-    /**
-     * Zeigt das aktuelle Protokoll an.
-     */
-    public void zeigeProtokoll() {
-        if (protokoll.isEmpty()) {
-            sb.append("\n").append("Leeres Protokoll");
-            System.out.println(sb.toString());
-        } else {
-            sb.append("\n").append("Gewählte Produkte");
-            for (String produkt : protokoll) {
-                sb.append("\n").append("- ").append(produkt);
-            }
-            System.out.println(sb);
-        }
-    }
-
-    /**
-     * Schreibt das Protokoll in die Datei.
-     */
-    private void schreibeInDatei() {
-        try (FileWriter fw = new FileWriter(dateiName, true)) {
-            fw.write(protokoll.get(protokoll.size() - 1) + "\n");
-        } catch (IOException e) {
-            System.out.println("Fehler beim Schreiben in die Datei: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Liest das Protokoll aus der Datei und aktualisiert die interne Liste.
-     */
-    public void leseProtokollAusDatei() {
-        try (BufferedReader br = new BufferedReader(new FileReader(dateiName))) {
-            String zeile;
-            protokoll.clear(); // Vorherige Einträge löschen
-            while ((zeile = br.readLine()) != null) {
-                protokoll.add(zeile);
-            }
-        } catch (IOException e) {
-            System.out.println("Fehler beim Lesen der Datei: " + e.getMessage());
-        }
-    }
-}
+//class MitarbeiterProtokoll {
+//
+//    private final StringBuilder sb = new StringBuilder();
+//    private final List<String> protokoll = new ArrayList<>();
+//    private final String dateiName = "protokoll.txt";
+//
+//    public void hinzufuegen(String produkt) {
+//        protokoll.add(produkt);
+//        schreibeInDatei();
+//    }
+//
+//    public void zeigeProtokoll() {
+//        if (protokoll.isEmpty()) {
+//            sb.append("\n").append("Leeres Protokoll");
+//            System.out.println(sb.toString());
+//        } else {
+//            sb.append("\n").append("Gewählte Produkte");
+//            for (String produkt : protokoll) {
+//                sb.append("\n").append("- ").append(produkt);
+//            }
+//            System.out.println(sb);
+//        }
+//    }
+//
+//    private void schreibeInDatei() {
+//        try (FileWriter fw = new FileWriter(dateiName, true)) {
+//            fw.write(protokoll.get(protokoll.size() - 1) + "\n");
+//        } catch (IOException e) {
+//            System.out.println("Fehler beim Schreiben in die Datei: " + e.getMessage());
+//        }
+//    }
+//
+//    public void leseProtokollAusDatei() {
+//        try (BufferedReader br = new BufferedReader(new FileReader(dateiName))) {
+//            String zeile;
+//            protokoll.clear(); // Vorherige Einträge löschen
+//            while ((zeile = br.readLine()) != null) {
+//                protokoll.add(zeile);
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Fehler beim Lesen der Datei: " + e.getMessage());
+//        }
+//    }
+//}
 
 
 
