@@ -42,13 +42,18 @@ public class KaffeeAutomatDisplay {
             System.out.println("\nWählen die Zahl für ein Getränk aus: ");
             int auswahl = scanner.nextInt();
 
-            if (auswahl > 0 && auswahl <= produkte.size()) {
+            if ((auswahl > 0) && (auswahl <= produkte.size())) {
                 produkt = produkte.get(auswahl - 1);
-                break;
+                if (automat.bestandPruefen(produkt)) {
+                    break;
+                } else {
+                    System.out.println("Getränk leer, bitte Mitarbeiter informieren.\n");
+                }
             }
             else {
                 System.out.println("Ungültige Auswahl.");
             }
+
         }
 
         automat.bezahlen(produkt);
@@ -158,7 +163,7 @@ class KaffeeAutomat {
     private final List<AutomatenProdukt> produkte = new ArrayList<>();
 
     public KaffeeAutomat() {
-        produkte.add(new AutomatenProdukt(new Espresso(), 1.50, 20));
+        produkte.add(new AutomatenProdukt(new Espresso(), 1.50, 0));
         produkte.add(new AutomatenProdukt(new LatteMacchiato(), 2.50, 20));
         produkte.add(new AutomatenProdukt(new Cappuccino(), 2.00, 20));
         produkte.add(new AutomatenProdukt(new SchwarzerKaffee(), 0.50, 20));
@@ -222,8 +227,8 @@ class KaffeeAutomat {
         System.out.println(sb);
     }
 
-    public void bestandPruefen(Produkt produkt) {
-
+    public boolean bestandPruefen(AutomatenProdukt produkt) {
+        return produkt.getAnzahl() > 0;
     }
 }
 
