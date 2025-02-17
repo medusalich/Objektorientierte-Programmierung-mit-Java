@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Die Hauptklasse für die Anzeige und Interaktion mit dem Kaffeeautomaten.
+ * Sie ermöglicht dem Benutzer, Produkte auszuwählen und Zahlungen durchzuführen.
+ */
 public class KaffeeAutomatDisplay {
 
     /**
@@ -20,7 +24,8 @@ public class KaffeeAutomatDisplay {
     }
 
     /**
-     * Hauptanzeigemethode, die dem Benutzer alle Produkte anzeigt und auswählen lassen kann.
+     * Zeigt die verfügbaren Produkte des Kaffeeautomaten an und ermöglicht dem Benutzer,
+     * ein Produkt auszuwählen. Überprüft den Bestand und führt die Zahlung durch.
      */
     public static void display() {
 
@@ -66,6 +71,9 @@ public class KaffeeAutomatDisplay {
     }
 }
 
+/**
+ * Repräsentiert ein Produkt im Kaffeeautomaten mit Preis und Verfügbarkeit.
+ */
 class AutomatenProdukt {
 
     private Produkt produkt;
@@ -99,14 +107,14 @@ class AutomatenProdukt {
     }
 }
 
+/**
+ * Repräsentiert ein Produkt mit einem Namen und einer Menge in Millilitern.
+ */
 class Produkt {
 
     private final String name;
     private final int ml;
 
-    /**
-     * Erstellt ein neues Produkt mit einem Namen, einem Preis und der Menge.
-     */
     protected Produkt(String name, int ml) {
         this.name = name;
         this.ml = ml;
@@ -163,6 +171,10 @@ class HeissesWasser extends Produkt {
     }
 }
 
+/**
+ * Repräsentiert den Kaffeeautomaten, der Produkte verwaltet, Zahlungen verarbeitet
+ * und den Bestand überwacht.
+ */
 class KaffeeAutomat {
 
     private final StringBuilder sb = new StringBuilder();
@@ -180,6 +192,9 @@ class KaffeeAutomat {
         produkte.add(new AutomatenProdukt(new HeissesWasser(), 0.00, 30));
     }
 
+    /**
+     * Schreibt die aktuellen Bestände der Produkte in eine Datei.
+     */
     public void schreibeInDatei() {
         try (FileWriter fw = new FileWriter(dateiName)) {
             for (AutomatenProdukt produkt : produkte) {
@@ -190,6 +205,9 @@ class KaffeeAutomat {
         }
     }
 
+    /**
+     * Liest die Bestände der Produkte aus einer Datei und aktualisiert die internen Werte.
+     */
     public void leseAusDatei() {
         try (BufferedReader br = new BufferedReader(new FileReader(dateiName))) {
             String zeile;
@@ -207,6 +225,10 @@ class KaffeeAutomat {
         return produkte;
     }
 
+    /**
+     * Verarbeitet die Zahlung für das ausgewählte Produkt. Fordert den Benutzer auf,
+     * Münzen einzuwerfen, und gibt Rückmeldungen zur Zahlung.
+     */
     public void bezahlen(AutomatenProdukt produkt) {
 
         double eingeworfenerBetrag = 0;
@@ -246,8 +268,6 @@ class KaffeeAutomat {
 
     /**
      * Produziert das ausgewählte Produkt und gibt eine entsprechende Meldung aus.
-     *
-     * @param produkt Das zu produzierende Produkt.
      */
     public void produziert(AutomatenProdukt produkt) {
         sb.setLength(0);
@@ -257,6 +277,12 @@ class KaffeeAutomat {
         System.out.println(sb);
     }
 
+    /**
+     * Überprüft, ob das angegebene Produkt im Automaten verfügbar ist.
+     *
+     * @param produkt Das Produkt, dessen Bestand überprüft wird.
+     * @return true, wenn das Produkt verfügbar ist, andernfalls false.
+     */
     public boolean bestandPruefen(AutomatenProdukt produkt) {
         return produkt.getAnzahl() > 0;
     }
