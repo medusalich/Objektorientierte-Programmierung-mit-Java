@@ -11,9 +11,7 @@ public class StringListe {
 
     public static void main(String[] args) {
 
-        List<String> stringList = new ArrayList<>();
-
-        stringList = readFromFile();
+        List<String> stringList = readFromFile();
             for(String str : stringList) {
             System.out.println(str);
         }

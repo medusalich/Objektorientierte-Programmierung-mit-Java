@@ -8,18 +8,19 @@ public class Aufgabe3 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        int zahl;
 
         while (true) {
 
             try {
                 System.out.println("Schreib eine Zahl: ");
-                int zahl = scanner.nextInt();
-                scanner.nextLine();
+                zahl = scanner.nextInt();
                 System.out.println(zahl);
                 break;
             }
             catch (InputMismatchException e) {
                 System.out.println("Bitte nur Zahlen eingeben!");
+                scanner.nextLine();
             }
         }
     }

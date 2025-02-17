@@ -17,8 +17,7 @@ public class Aufgabe2 {
         String auswahl = scanner.nextLine();
 
         if (!auswahl.equalsIgnoreCase("schreiben")) {
-            List<String> stringList = new ArrayList<>();
-            stringList = readFromFile(dateiname);
+            List<String> stringList = readFromFile(dateiname);
             System.out.println("Suchwort eingeben: ");
             String suchWort = scanner.nextLine();
             int zaehler = 0;
@@ -48,7 +47,7 @@ public class Aufgabe2 {
         }
     }
 
-    private static List<String> readFromFile(String dateiname) {
+    private static List<String> readFromFile(String dateiname) { //FileReadAllLines
 
         List<String> stringList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader((new FileReader(dateiname)))) {
