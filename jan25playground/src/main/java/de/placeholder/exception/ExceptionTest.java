@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class exceptionTest {
+public class ExceptionTest {
 
     // Klassen- und Instanzvariablen bekommen Standartwerte (bei String null).
     static String andererName;
