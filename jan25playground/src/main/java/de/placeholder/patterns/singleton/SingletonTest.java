@@ -1,4 +1,4 @@
-package de.placeholder.patterns_singleton;
+package de.placeholder.patterns.singleton;
 
 import java.io.IOException;
 import java.nio.file.Files;

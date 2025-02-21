@@ -1,4 +1,4 @@
-package de.placeholder.patterns_singleton;
+package de.placeholder.patterns.singleton;
 
 public class SimpleSingletonTest {
 
