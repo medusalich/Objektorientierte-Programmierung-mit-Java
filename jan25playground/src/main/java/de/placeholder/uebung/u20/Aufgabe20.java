@@ -1,38 +1,31 @@
 package de.placeholder.uebung.u20;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.Locale;
-import java.util.Scanner;
-
 public class Aufgabe20 {
 
     /*
+    Aufgabe 1
     Schreibe ein Programm, dass eine Eingabe für ein Datum und Uhrzeit als String von der
     Konsole entgegennimmt und es richtig zu einem LocalDateTime parst.
      */
 
-    static Scanner scanner = new Scanner(System.in);
+    /*
+    Aufgabe 2
+    Schreibe ein Programm für die Zeiterfassung.
+    Du kannst das Programm mit JavaFX oder als Konsolenprogramm starten
 
-    public static void main(String[] args) {
+    Es sind folgende Befehle möglich:
+        start = Beginn der Zeiterfassung
+        ende = Ende der Zeiterfassung
 
-        System.out.println("Datum + Uhrzeit (dd.MM.yyyy HH:mm) eingeben: ");
-        String eingabe = scanner.next();
+    Wird die Zeiterfassung beendet, wird die Zeit in Stunden und Minuten angezeigt.
 
-        Locale.setDefault(Locale.US);
 
-        DateTimeFormatter eingabeF = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-        DateTimeFormatter ausgabeF = DateTimeFormatter.ofPattern("EEEE, dd.MM.yyyy HH:mm 'Uhr'");
+    Erweiterung 1:
+    Man kann die Zeiterfassung mit dem Befehl start_pause unterbrechen und mit ende_pause fortsetzen
 
-        try{
-            LocalDateTime eigegebenes = LocalDateTime.parse(eingabe, eingabeF);
-            System.out.println(eigegebenes);
-            System.out.println(eigegebenes.format(ausgabeF));
-        }
-        catch (DateTimeParseException e) {
-            System.out.println("Falsche Format. Eingabe: dd.MM.yyyy HH:mm .");
-        }
-    }
+    Erweiterung 2:
+    Schreibe die Zeiterfassung als ein Singleton
+     */
+
 
 }
