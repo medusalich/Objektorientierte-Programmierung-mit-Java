@@ -4,6 +4,11 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+/**
+ * Einstiegspunkt für das Programm.
+ * Sie enthält die main-Methode, die die Zeiterfassung initialisiert
+ * und die Methode zur Erfassung der Zeit aufruft.
+ */
 public class Aufgabe2 {
 
     public static void main(String[] args) {
@@ -15,6 +20,10 @@ public class Aufgabe2 {
     }
 }
 
+/**
+ * Enum Zeiterfassung implementiert eine Singleton-Instanz zur Zeiterfassung.
+ * Es ermöglicht das Starten, Pausieren und Beenden der Zeitmessung.
+ */
 enum Zeiterfassung {
     INSTANCE;
 
@@ -26,6 +35,10 @@ enum Zeiterfassung {
     private LocalDateTime ende;
     private long pausenMinuten = 0;
 
+    /**
+     * Startet die Zeiterfassung und ermöglicht dem Benutzer, Eingaben zu tätigen,
+     * um die Zeitmessung zu steuern.
+     */
     public void zeitErfassen() {
         while (true) {
             System.out.println("Eingabe (start, start pause, ende pause, ende, exit): ");
@@ -57,6 +70,10 @@ enum Zeiterfassung {
         }
     }
 
+    /**
+     * Startet die Zeiterfassung.
+     * Wenn die Zeiterfassung bereits gestartet ist, wird eine entsprechende Nachricht ausgegeben.
+     */
     public void startZeiterfassung() {
         if (start == null) {
             start = LocalDateTime.now();
@@ -66,6 +83,11 @@ enum Zeiterfassung {
         }
     }
 
+    /**
+     * Startet eine Pause der Zeiterfassung.
+     * Wenn die Pause bereits gestartet ist oder die Zeiterfassung nicht gestartet wurde,
+     * wird eine entsprechende Nachricht ausgegeben.
+     */
     public void startPause() {
         if (start_pause == null && start != null) {
             start_pause = LocalDateTime.now();
@@ -77,6 +99,11 @@ enum Zeiterfassung {
         }
     }
 
+    /**
+     * Beendet die Pause der Zeiterfassung.
+     * Berechnet die Dauer der Pause und addiert sie zu den pausierten Minuten.
+     * Wenn keine Pause aktiv ist, wird eine entsprechende Nachricht ausgegeben.
+     */
     public void endePause() {
         if (start_pause != null) {
             ende_pause = LocalDateTime.now();
@@ -90,6 +117,12 @@ enum Zeiterfassung {
         }
     }
 
+    /**
+     * Beendet die Zeiterfassung.
+     * Berechnet die Gesamtzeit unter Berücksichtigung der Pausen und gibt das Ergebnis aus.
+     * Wenn die Zeiterfassung nicht gestartet wurde oder eine Pause aktiv ist,
+     * wird eine entsprechende Nachricht ausgegeben.
+     */
     public void endeZeiterfassung() {
         if (start != null && start_pause == null) {
             ende = LocalDateTime.now();
