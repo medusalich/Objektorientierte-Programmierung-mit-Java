@@ -36,7 +36,7 @@ public class KundenCrud {
 
             // INSERT INTO " + TABLE + " (id, vorname, nachname) VALUES(NULL, 'Bruce', 'Banner')
             final String SQL = "INSERT INTO " + TABLE + " (id, vorname, nachname, aktiv) " +
-                    "VALUES(NULL, '%s', '%s')"; // %s ist ein Platzhalter für einen String.
+                    "VALUES(NULL, '%s', '%s', true)"; // %s ist ein Platzhalter für einen String.
 
             // executeUpdate liefert die Anzahl der Zeilen die geändert/hinzugefügt wurden.
             return stmt.executeUpdate(String.format(SQL, kunde.getVorname(), kunde.getNachname())) > 0;
