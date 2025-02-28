@@ -50,7 +50,7 @@ class Server {
             System.out.println("\nVERSCHICKT: " + n);
     }
 
-    private void createMessage(String text) {
+    public void createMessage(String text) {
         nachrichten.offer(new Nachricht(text));
     }
 
